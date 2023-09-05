@@ -1,0 +1,360 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+background-image
+after: before:
+slick slider
+image overlap
+grid column
+equal height width
+hover color change another element
+
+<!------- Blink -------->
+
+.product-block.custom-blink {
+  animation: blinker 1.5s linear infinite;
+  color: #9f8561;
+  font-weight: 700;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+<!-------/Blink -------->
+<!------------- flexbox properties --------------------->
+   flex-grow:2;
+   flex-shrink:0;
+   
+<!-------- media query mobile view ---->
+
+@media only screen and (max-width: 767px) {
+      .batn-mob-hide{
+        display:none;
+      }
+}
+@media only screen and (min-width: 768px) {
+
+}
+<!-------- / media query mobile view ---->
+<!------------- product page up down arrow hide ---------------------->
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+<!------------- /product page up down arrow hide ---------------------->
+
+@media screen and (min-device-width: 481px) and (max-device-width: 768px) { 
+    /* STYLES HERE */
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1281px) { 
+
+}
+==========================
+
+<!------------------after svg file link---------------------------->
+
+h4.ftr-cus-toggle::after {
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "";
+  width: 20px;
+  height: 40px;
+  right:40px;
+  background-image: url("https://cdn.shopify.com/s/files/1/0266/3831/9700/files/chevron-down.svg?v=1663821675");
+}
+
+
+=====================================================================================
+
+<!-----------------------product page thumbnail------------------->
+.custom-pdp-side {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+/* .pdp-main-image {
+    grid-column: 2/4;
+    grid-row: 1/4;
+} */
+.custom-thumbnail-side {
+    display:block;
+    height: 464px;
+    overflow: auto;
+}
+.side-thumbnail {
+   margin:auto;
+}
+
+/////////////////////////////////////////////////////////////////////////////////
+
+<!-----------------------checkbox hover background color------------------->
+
+
+input[type='radio'] {
+    accent-color: #282828;
+}
+
+input#vehicle2{
+  position:relative;
+}
+
+input#vehicle2:hover:before {
+  content: "";
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  background-color: #F5F4F0;
+  border:1px solid #F5F4F0;
+  left: 0px;
+  z-index: 1;
+  top: 0px;
+  border-radius: 50%;
+}
+
+input#vehicle2:checked:before {
+    content: "";
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background-color: #000;
+    left: 3px;
+    z-index: 111;
+    top: 3px;
+    border-radius: 50%;
+}
+
+///////////////////////////////////////////////////////////////
+
+<!-------------------scroll bar slider show------------------------>
+
+  <div class="slider_progress" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+    <span class="slider__label sr-only_rec">
+  </div>
+
+
+js
+
+var $sliderRec = $('.slider_wrap');
+  var $progressSlideBar = $('.slider_progress');
+  var $progressBarLabel = $( '.slider__label' );
+  
+  $sliderRec.on('beforeChange', function(event, slick, currentSlide, nextSlide) {   
+    var calc = ( (nextSlide) / (slick.slideCount-1) ) * 100;
+    
+    $progressSlideBar
+      .css('background-position-x', calc + '%')
+      .attr('aria-valuenow', calc );
+    
+    $progressBarLabel.text( calc + '% completed' );
+  });
+  
+  css
+  
+    .slider_progress {
+    display: block;
+    width: 100%;
+    height: 10px;
+    / border-radius: 10px; /
+    overflow: hidden;
+    background-color: #f5f5f5;
+    background-image: linear-gradient(to right, black, black);
+    background-repeat: no-repeat;
+    background-size: 15% 100%;
+    / transition: background-size .4s ease-in-out; /
+    transition: all 0.5s ease-in-out;
+    margin-top: 20px;
+  }
+
+  .sr-only_rec {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+  }
+  
+  
+  /////////////////////////////////////////////////////////////
+  
+  ===================child :nth-child(2) ====================
+  
+  .ftr_payment_icon svg.payment-icon:nth-child(2) {
+    display: none;
+}
+
+==========================================
+
+================= background image gradient ================================
+
+<section style="background: linear-gradient(transparent 60%, white 50% 100%), url({{ section.settings.back-image | img_url: 'master'}});">
+
+
+//////////////////////////////////////////////////////////////////////////
+
+
+======================= header icon change color shopify ===========================
+/* header */
+    section.sf-header:not(.scroll-down) .site-header__logo-image img,
+    section.sf-header:not(.scroll-down):not(.scroll-up) .sf-search-form img,
+    section.sf-header:not(.scroll-down):not(.scroll-up) .sf-cart-icon img{
+        filter: brightness(0) invert(1);
+    }
+
+    section.sf-header:not(.scroll-down):not(.scroll-up) .wk-icon__svg {
+        stroke: #fff;
+    }
+================ center properties ===========================
+
+    justify-self: center;
+	
+	
+//////////////////////////////////////////////////////////////	
+
+================== white space ======================
+
+    white-space: pre-wrap; 
+    white-space: pre;
+	
+///////////////////////////////////////////////////////////////////	
+================= grid ==================================
+.product-grid-col {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    width: 100%;
+}
+//////////////////////////////////////////////////////////////////
+
+================= Object fit  ============
+
+object-fit: cover;
+
+
+////////////////////////
+
+================= dropdown ===================
+jQuery(document).ready(function($){
+$(".widgettitle").click(function(){
+  $(this).next().toggleClass("footer_menu_open");
+});
+});
+
+//////////////////////////////////////
+========== position sticky veste css =====================
+main div nu 
+overflow:unset;
+kr do
+    div es div nu sticky lagao
+.mw_sec{
+   position:sticky;
+   top:0;
+}
+
+
+========== position sticky veste js =====================
+
+const stickyDiv = document.querySelector(".mw_slider");
+const stickyDivP = document.querySelector(".mw_slider").parentElement;
+
+document.addEventListener("scroll",function(){
+  // console.log(window.pageYOffset , (stickyDiv.offsetTop - 25));
+  if(window.pageYOffset > (stickyDivP.offsetTop -35)){
+    stickyDiv.classList.add("sticky__cus");
+    // console.log("hi");
+  }
+  else{
+    // console.log("bye");
+    stickyDiv.classList.remove("sticky__cus");
+  }
+});
+
+------------------- css ----------------------------
+.sticky__cus {
+    position: fixed;
+    top: 25px;
+    z-index: 11111;
+    background: #fff;
+    padding: 25px 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+    transition: all 0.1s ease-out;
+  }
+//////////////////////////////////////////////////////////////////////
+
+
+const stickyDiv = document.querySelector(".mw_slider");
+const stickyDivP = document.querySelector(".mw_slider").parentElement;
+
+document.addEventListener("scroll",function(){
+  if(window.pageYOffset > (stickyDivP.offsetTop -35)){
+    stickyDiv.classList.add("sticky__cus");
+  }
+  else{
+    stickyDiv.classList.remove("sticky__cus");
+  }
+});
+
+////////////////////////////////////////////////////////////////////
+
+================ video lagon veste custom html section lo ===============================
+
+
+{
+              "type": "html",
+              "id": "html",
+              "label": "Custom HTML"
+            }
+<video width="100%" height="300" controls="">
+    <source src="https://cdn.shopify.com/videos/c/o/v/ddeb7121fd144cb38c436d263a9e97f3.mov">
+    Your browser does not support the video tag.
+  </video>
+  
+  
+  ////////////////////////////////////////////////////
+  
+  =============== slick slider arrows replace icon image =======================
+  
+  .slick-prev::before {
+    content: "";
+    background-image: url(path/to/prev-icon.svg);
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+.slick-next::before {
+    content: "";
+    background-image: url(path/to/next-icon.svg);
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+
+//////////////////////////////////////////////////////////////////
+
+=================== multiple class kaise de =======================
+.cus_list :is(p, li, a){
+	color:red;
+}
+.cus_list p,
+.cus_list li,
+.cus_list a{
+   color:red;
+}
